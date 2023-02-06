@@ -26,7 +26,7 @@ swap
 			b loop ; branch to the beginning of the loop
 finish
  end of program
-task2
+;task2  Store square of each number in consecutive memory
 			mov r0,#0
 			mul r0,r0,r0
 			mov r1,#SRAM_BASE
@@ -67,7 +67,7 @@ task2
 			mov r0, #9
 			mul r0,r0,r0
 			str r0,[r1],#4
-task3
+;task3 Find sum of first 10 natural numbers, N=10, ans should = 55
 			mov r0, #1
 			mov r1, #2
 			add r0, r1,r0 ;1+2
