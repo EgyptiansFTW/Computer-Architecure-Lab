@@ -33,10 +33,10 @@ Image Symbol Table
     .text                                    0x0000026c   Section      268  startup_tm4c123.o(.text)
     .text                                    0x00000378   Section        0  heapauxi.o(.text)
     $v0                                      0x00000380   Number         0  lab6.o(lab6)
-    lab6                                     0x00000380   Section       64  lab6.o(lab6)
-    MATRIX_A                                 0x000003c0   Data           0  lab6.o(data)
-    data                                     0x000003c0   Section       60  lab6.o(data)
-    MATRIX_B                                 0x000003d8   Data           0  lab6.o(data)
+    lab6                                     0x00000380   Section      100  lab6.o(lab6)
+    MATRIX_A                                 0x000003e4   Data           0  lab6.o(data)
+    data                                     0x000003e4   Section       92  lab6.o(data)
+    MATRIX_C                                 0x00000414   Data           0  lab6.o(data)
     Heap_Mem                                 0x20000000   Data           0  startup_tm4c123.o(HEAP)
     Stack_Mem                                0x20000000   Data         512  startup_tm4c123.o(STACK)
     HEAP                                     0x20000000   Section        0  startup_tm4c123.o(HEAP)
@@ -173,7 +173,7 @@ Image Symbol Table
     __use_two_region_memory                  0x00000379   Thumb Code     2  heapauxi.o(.text)
     __rt_heap_escrow$2region                 0x0000037b   Thumb Code     2  heapauxi.o(.text)
     __rt_heap_expand$2region                 0x0000037d   Thumb Code     2  heapauxi.o(.text)
-    __main                                   0x00000381   Thumb Code    54  lab6.o(lab6)
+    __main                                   0x00000381   Thumb Code    88  lab6.o(lab6)
 
 
 
@@ -183,9 +183,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x000003fc, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000440, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000003fc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000440, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -193,16 +193,16 @@ Memory Map of the image
     0x0000026c   0x0000026c   0x0000010c   Code   RO           11  * .text               startup_tm4c123.o
     0x00000378   0x00000378   0x00000006   Code   RO           17    .text               c_w.l(heapauxi.o)
     0x0000037e   0x0000037e   0x00000002   PAD
-    0x00000380   0x00000380   0x00000040   Code   RO            2  * lab6                lab6.o
-    0x000003c0   0x000003c0   0x0000003c   Data   RO            1    data                lab6.o
+    0x00000380   0x00000380   0x00000064   Code   RO            2  * lab6                lab6.o
+    0x000003e4   0x000003e4   0x0000005c   Data   RO            1    data                lab6.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x000003fc, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00000440, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x000003fc, Size: 0x00000200, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x00000440, Size: 0x00000200, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -217,11 +217,11 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        64         10         60          0          0        352   lab6.o
+       100         12         92          0          0        364   lab6.o
        268         20        620          0        512       5368   startup_tm4c123.o
 
     ----------------------------------------------------------------------
-       332         30        680          0        512       5720   Object Totals
+       368         32        712          0        512       5732   Object Totals
          0          0          0          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -251,15 +251,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       340         30        680          0        512       5772   Grand Totals
-       340         30        680          0        512       5772   ELF Image Totals
-       340         30        680          0          0          0   ROM Totals
+       376         32        712          0        512       5784   Grand Totals
+       376         32        712          0        512       5784   ELF Image Totals
+       376         32        712          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1020 (   1.00kB)
+    Total RO  Size (Code + RO Data)                 1088 (   1.06kB)
     Total RW  Size (RW Data + ZI Data)               512 (   0.50kB)
-    Total ROM Size (Code + RO Data + RW Data)       1020 (   1.00kB)
+    Total ROM Size (Code + RO Data + RW Data)       1088 (   1.06kB)
 
 ==============================================================================
 
